@@ -1,0 +1,50 @@
+.image {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 550px;
+  flex-direction: column;
+  align-items: center;
+
+  
+}
+.radioButtons {
+  display: flex;
+  flex-direction: row;
+  /* position: relative;
+  top: 500px; */
+}
+.text_container{
+  text-align: center;
+}
+.image_text {
+   
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Gruppo', sans-serif;
+    font-size: 60px;
+  }
+  .quote {
+    line-height: 10px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Gruppo', sans-serif;
+    font-size: 20px;
+  }
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.radioButton:checked + label {
+  animation: scaleAnimation 0.8s ease-in-out;
+}
