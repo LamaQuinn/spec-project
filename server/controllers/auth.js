@@ -48,15 +48,18 @@ module.exports = {
   login:async(req,res)=>{
     try {
         const {username,password}=req.body
+        console.log("one")
         const foundUser=await User.findOne({where:{username:username}})
         if(foundUser){
+          console.log("two")
             const isAuthenticated=bcrypt.compareSync (password,foundUser.hashedPassword)
             if(isAuthenticated){
+              console.log("three")
                 const token=createToken(foundUser.dataValues.username,foundUser.dataValues.id)
                 const expiration = new Date();
                 const exp =expiration.setMinutes(expiration.getMinutes() + 10);
                 res.status(200).send({
-                    username:newUser.dataValues.username, userId:newUser.dataValues.id, token:token,expiration:exp})
+                    username:foundUser.dataValues.username, userId:foundUser.dataValues.id, token:token,expiration:exp})
             }else{
                 res.status(400).send('Password incorrect.')
             }

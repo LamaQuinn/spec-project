@@ -38,3 +38,10 @@ header{
 #log_btn:hover{
     background-color: rgb(117, 141, 186);
 }
+.underline {
+    border-bottom: 2px solid gray; 
+    text-decoration: none; 
+  }
+  .activeLink {
+    text-decoration: none;
+  }

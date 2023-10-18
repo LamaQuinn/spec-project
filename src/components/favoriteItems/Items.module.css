@@ -1,74 +1,113 @@
-/* Items.module.css */
+
 .container {
-    width: 300px;
-    height: 350px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    /* box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.6); */
-    justify-content: space-between;
-    padding-bottom: 10px;
-    /* box-sizing: border-box; */
-    border-radius: 3px;
-    margin-top: 10px;
-    overflow: hidden; 
-    position: relative; 
-    transition: transform 0.2s; 
-   
-  }
-  
-  .container:hover {
-    transform: translateY(-5px);
-    
-  }
-  
-  .items_img {
-    width: 300px;
-    height: 250px;
-    margin-bottom: 5px;
-    transition: filter 0.2s; 
-  }
-  
-  .container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
-    opacity: 0; 
-    transition: opacity 0.2s; 
-  }
-  
-  .container:hover::before {
-    opacity: 1; 
-  }
-  
-  .container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* border: 2px solid #000; */
-    box-sizing: border-box;
-    opacity: 0; 
-    transition: opacity 0.2s; 
-  }
-  
-  .container:hover::after {
-    opacity: 1; 
-  }
-  
-  .details {
-    font-family: 'Gruppo', sans-serif;
-    transition: color 0.2s; 
-  }
-  
-  /* .container:hover .details {
-    color: black; 
-  }
-  */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row if necessary */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+}
+/* Items.module.css */
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333 ;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: #f1f1f1 ;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: max-content; /* Make the width fit the content */
+  margin-top:10px;
+}
+
+
+.container1 {
+  width: 200px; /* Adjust the width to your preference */
+  height: auto; /* Adjust the height based on your design */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px; /* Adjust padding to your preference */
+  margin-bottom: 20px;
+  border-radius: 3px;
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.container1:hover {
+  transform: translateY(-5px);
+}
+
+.items_img {
+  width: 100%; /* Ensure the image takes the full width of the container */
+  height: auto;
+  margin-bottom: 5px;
+  transition: filter 0.2s;
+}
+
+.container1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.container1:hover::before {
+  opacity: 1;
+}
+
+.container1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.container1:hover::after {
+  opacity: 1;
+}
+
+.details {
+  font-family: 'Gruppo', sans-serif;
+  transition: color 0.2s;
+}
+
+/* Add this to your Items.module.css */
+.navigation {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.navigation button {
+  background-color: #0074d9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.navigation button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+

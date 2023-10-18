@@ -7,7 +7,7 @@ const Home=()=>{
     return(
         <>
         <Images/>
-        <Items/>
+        <Items />
         </>
        
     )
