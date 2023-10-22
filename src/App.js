@@ -9,6 +9,7 @@ import Auth from './components/authPage/Auth';
 import Cart from './components/cartComponents/Cart';
 import About from './components/aboutComponent/About';
 import Shop from './components/shopComponent/Shop';
+import Profile from './components/profilePage/Profile';
 
 import AuthContext from './store/authContext';
 
@@ -22,7 +23,8 @@ function App() {
           <Route path='/shop' element={<Shop/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/login' element={!state.token ? <Auth/>:<Navigate to='/'/>}/>
-          <Route path='/cart' element={!state.token ? <Cart/>:<Navigate to='/'/>}/>
+          <Route path='/cart' element={state.token ? <Cart/>:<Navigate to='/'/>}/>
+          <Route path='/profile' element={<Profile/>}/>
         </Routes>
  
       <Footer/>

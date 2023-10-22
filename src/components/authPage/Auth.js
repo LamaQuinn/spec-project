@@ -45,6 +45,7 @@ const Auth = () => {
               name="username"
               placeholder="Username"
               required
+              onChange={(e)=>setUsername(e.target.value)}
             />
           </div>
           <div className={styles.input_box}>
@@ -56,6 +57,7 @@ const Auth = () => {
               name="password"
               placeholder="Password"
               required
+              onChange={(e)=>setPassword(e.target.value)}
             />
           </div>
           <button

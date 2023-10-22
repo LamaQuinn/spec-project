@@ -39,6 +39,9 @@ const Header = () => {
             <NavLink to="/about" className={`${styles.btn} ${styles.activeLink}`}>
               About
             </NavLink>
+            <NavLink to="/profile" className={`${styles.btn} ${styles.activeLink}`}>
+              Profile
+            </NavLink>
             <NavLink to="/login">
               <button className={styles.btn} id={styles.log_btn}>
                 Login

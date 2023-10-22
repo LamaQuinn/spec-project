@@ -13,4 +13,13 @@ module.exports = {
       res.sendStatus(400);
     }
   },
+  getAllItems: async (req, res) => {
+    try {
+      const allItems = await Items.findAll({attributes:['title','photo_url','price']}); 
+      res.status(200).send(allItems);
+    } catch (error) {
+      console.error(error);
+      res.sendStatus(400);
+    }
+  },
 };
