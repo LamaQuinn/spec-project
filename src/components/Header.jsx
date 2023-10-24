@@ -17,11 +17,15 @@ const Header = () => {
             <NavLink to="/" className={`${styles.btn} ${window.location.pathname === '/' ? styles.underline : ''}`}>
               Home
             </NavLink>
+            <NavLink to="/about" className={`${styles.btn} ${styles.activeLink}`}>
+              About
+            </NavLink>
             <NavLink to="/shop" className={`${styles.btn} ${styles.activeLink}`}>
               Shop
             </NavLink>
-            <NavLink to="/about" className={`${styles.btn} ${styles.activeLink}`}>
-              About
+            
+            <NavLink to="/profile" className={`${styles.btn} ${styles.activeLink}`}>
+              Profile
             </NavLink>
             <NavLink to="/cart" className={`${styles.btn} ${styles.activeLink}`}>
               Cart
@@ -33,15 +37,13 @@ const Header = () => {
             <NavLink to="/" className={`${styles.btn} ${window.location.pathname === '/' ? styles.underline : ''}`}>
               Home
             </NavLink>
-            <NavLink to="/shop" className={`${styles.btn} ${styles.activeLink}`}>
+            {/* <NavLink to="/shop" className={`${styles.btn} ${styles.activeLink}`}>
               Shop
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/about" className={`${styles.btn} ${styles.activeLink}`}>
               About
             </NavLink>
-            <NavLink to="/profile" className={`${styles.btn} ${styles.activeLink}`}>
-              Profile
-            </NavLink>
+            
             <NavLink to="/login">
               <button className={styles.btn} id={styles.log_btn}>
                 Login

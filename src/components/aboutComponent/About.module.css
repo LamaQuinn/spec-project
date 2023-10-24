@@ -1,10 +1,43 @@
 .about_container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
-  background-image: url("../../assets/about.jpg");
+  background-image: url("../../assets/about5.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  padding: 20px;
 }
+
+.about_info {
+  font-family: 'Gruppo', sans-serif;
+  max-width: 30%;
+  padding: 50px;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  color: black;
+  border-radius: 10px;
+  max-height: 100vh;
+  border: 1px solid black;
+  /* margin-bottom: 320px; */
+}
+
+.about_name {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about_text {
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+
+/* @media (max-width: 868px) {
+  .about_info {
+    max-width: 100%; 
+    padding: 20px; 
+    margin-top: 420px; 
+  }
+} */

@@ -1,8 +1,10 @@
 // Shop.js
 import React, { useState, useEffect } from 'react';
-import styles from './Shop.module.css';
 import axios from 'axios';
 import Display from './displayAllItems';
+import styles from './Shop.module.css'
+// import Cart from '../cartComponents/Cart';
+import { CartProvider } from '../cartComponents/CartContext';
 
 function Shop() {
   const [rating, setRating] = useState(0);
@@ -13,7 +15,8 @@ function Shop() {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:4004/items")
+    axios
+      .get('http://localhost:4004/items')
       .then((response) => {
         setItems(response.data);
       })
@@ -23,18 +26,21 @@ function Shop() {
   }, []);
 
   return (
-    <div className={styles.main_container}>
-      <div className={styles.child_container}>
-        {items.map((item, index) => (
-          <Display
-            key={`${item.id}-${index}`}
-            item={item}
-            rating={rating}
-            handleStarHover={handleStarHover}
-          />
-        ))}
+    // <CartProvider>
+      <div className={styles.main_container}>
+        <div className={styles.child_container}>
+          {items.map((item, index) => (
+            <Display
+              key={`${item.id}-${index}`}
+              item={item}
+              rating={rating}
+              handleStarHover={handleStarHover}
+            />
+          ))}
+        </div>
+        {/* <Cart /> */}
       </div>
-    </div>
+    // </CartProvider>
   );
 }
 

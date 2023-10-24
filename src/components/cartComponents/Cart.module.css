@@ -118,3 +118,31 @@
 .submit_order:hover {
   background-color: #ff4500;
 }
+/* Add this to your CSS file, such as Cart.module.css */
+.remove_item {
+  background-color: #ff4500; /* Red background color */
+  color: #fff; /* White text color */
+  font-size: 1rem;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+
+  /* Center the text vertically and horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.remove_item:hover {
+  background-color: #ff0000; /* Darker red background color on hover */
+}
+.total {
+
+  font-size: 1.2rem;
+  color: #ff4500;
+  margin-top: 20px;
+}

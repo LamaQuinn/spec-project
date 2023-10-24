@@ -21,7 +21,7 @@ const items =[
     {
         
         title:"Coffee Beans",
-        photo_url:"https://media.istockphoto.com/id/962658860/photo/coffee-bag-with-custom-label-organic-whole-beans.jpg?s=612x612&w=0&k=20&c=oxt9dC6ARQkeSGcIyFdeIRFdeyX6xeGfBJSEWbVm8-U=",
+        photo_url:"https://wholesaleca.grosche.ca/cdn/shop/products/coffee-labels-on-brown-bag-Signature-blend-wholesale_coffee_beans.jpg?v=1607958531",
         price:"11.00$",
         favorites:true,
         categories:"Coffee",
