@@ -1,5 +1,5 @@
 const { Items } = require('../models/items');
-
+const {Orders}=require('../models/orders')
 module.exports = {
   getFavoriteItems: async (req, res) => {
     try {
@@ -22,4 +22,34 @@ module.exports = {
       res.sendStatus(400);
     }
   },
+  getOrderHistory:async(req,res)=>{
+    try {
+      const { user_id, item_id } = req.body;
+      const order = await Orders.bulkCreate(req.body.newOrders);
+      res.status(201).json(order);
+    } catch (error) {
+      console.error(error);
+      res.sendStatus(400);
+    }
+  },
+   getHistory : async (req, res) => {
+    const user_id = req.params.user_id; 
+  
+    try {
+      const orderHistory = await Orders.findAll({
+        where: { user_id },
+        attributes: ['id', 'date'],
+        include:[{
+          model:Items,
+          attributes:['title','photo_url']
+        }]
+      });
+  
+      res.status(200).json(orderHistory);
+    } catch (error) {
+      console.error(error);
+      res.sendStatus(500);
+    }
+  }
 };
+

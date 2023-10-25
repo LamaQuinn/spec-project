@@ -1,9 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext,useState } from 'react';
 import styles from './Cart.module.css';
+import axios from 'axios';
 import CartContext from './CartContext';
+import AuthContext from '../../store/authContext';
 
 const Cart = () => {
+  const {state}=useContext(AuthContext)
   const { cart, dispatch } = useContext(CartContext);
+ 
 
   const handleRemoveItem = (itemId) => {
     dispatch({ type: 'REMOVE_FROM_CART', payload: itemId });
@@ -21,6 +25,35 @@ const Cart = () => {
     return acc + cartItem.quantity * price;
   }, 0);
   
+  const submitOrder = async () => {
+    const user_id = state.userId; // Replace with the actual user ID (e.g., from your auth context)
+    const item_id = 1; // Replace with the actual item ID that is being ordered
+    let newOrders=cart.map((item)=>{
+      return {
+        user_id:state.userId,
+        itemId:item.id,
+        date: new Date(), 
+      }
+    })
+    try {
+      
+      await axios.post('/orders', { newOrders });
+      clearCartItems();
+      alert('Order submitted successfully.');
+  
+     
+      const response = await axios.get(`/orders/history/${user_id}`);
+      if (response.status === 200) {
+        const history = response.data;
+        // setOrderHistory(history); 
+       
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Failed to submit the order.');
+    }
+  };
+
   return (
     <div className={styles.cart_container}>
       <div className={styles.shopping_cart}>
@@ -54,7 +87,7 @@ const Cart = () => {
             Total Price: ${total.toFixed(2)}
           </div>
         )}
-        <button className={styles.submit_order}>Submit Order</button>
+        <button className={styles.submit_order} onClick={submitOrder}>Submit Order</button>
       </div>
     </div>
   );
